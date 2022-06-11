@@ -136,7 +136,7 @@ module.exports = function (imports) {
     // CID -> Promise String
     function cat(ipfsHash) {
       return new Promise(function(resolve, reject) {
-        sendAsync({uri: "/cat/"+ipfsHash}, function(err, res) {
+        sendAsync({uri: "/cat?arg="+ipfsHash}, function(err, res) {
           err ? reject(err) : resolve(res)
         });
       });
